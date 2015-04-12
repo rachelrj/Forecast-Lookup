@@ -28,3 +28,23 @@ $(function() {
 		source: returnedLocations
 	});
 });
+
+//Call wunderground autocomplete API with user's entry
+function submitLocation() {
+
+	var userResponse = document.getElementById('location-entry').value;
+	var url = 'http://autocomplete.wunderground.com/aq?query=' + userResponse
+
+/* Get autocomplete responses and */
+/*				$.ajax({
+				url : url,
+				dataType : "jsonp",
+				success : function(parsed_json) {
+				var location = parsed_json['location']['city'];
+				var temp_f = parsed_json['current_observation']['temp_f'];
+				alert("Current temperature in " + location + " is: " + temp_f);
+				}
+			});
+*/
+	React.render('<p> {url} </p>',document.getElementById('response'));
+}
