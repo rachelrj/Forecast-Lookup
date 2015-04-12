@@ -13,18 +13,18 @@
 		<meta name="viewport" content="initial-scale=1">
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="build/react.js"></script>
-    	<script src="build/JSXTransformer.js"></script>
+		<script src="react-0.13.1/build/react.js"></script>
+    	<script src="react-0.13.1/build/JSXTransformer.js"></script>
 
-		<script>
+    	<script type="text/jsx">
 
-			//call this function when user submits location
-			function submitLocation() {
-				var userresponse = document.getElementById('location-entry').value;
-				document.getElementById("response").innerHTML = '<p>' + userresponse + '</p>';
-			}
+    	function submitLocation() {
 
-		</script>
+    		var userResponse = document.getElementById('location-entry').value;
+
+	    	React.render(<p> {userResponse} </p>,document.getElementById('response'));
+	    }
+    	</script>
 
 	</head>
 
@@ -38,10 +38,9 @@
 			Please enter your location below to lookup the weather in your city
 		</p>
 
-		<form onsubmit="submitLocation()" method="post">
-  				<input id="location-entry" name="location-entry" placeholder="Enter a city" type="text">
- 				<input type="submit" value="Send">
-		</form>
+		<input id="location-entry" name="location-entry" placeholder="Enter a city" type="text">
+		<input type="button" onclick="submitLocation(); " value="Submit" />
+
 
 		<div id="response">
 		</div>
