@@ -37,11 +37,13 @@
 		<p> 
 			Please enter your location below to lookup the weather in your city
 		</p>
-			<div class="ui-widget">
-				<input id="location-entry" name="location-entry" placeholder="Enter a city" type="text">
-				<input type="button" onclick="submitLocation(); " value="Submit" />
-			</div>
-		<div id="response">
+		
+    <div class="ui-widget">
+				<input id="location-entry" name="location-entry" placeholder="Enter a city" type="text" oninput="autoCompleteFunction()"/>
+				<input type="button" onclick="submitLocation(); " value="Submit"/>
+		</div>
+		
+    <div id="response">
 		</div>
 
 	</body>

@@ -1,50 +1,28 @@
-//Autocomplete function
-$(function() {
-	var returnedLocations = [
-			"ActionScript",
-			"AppleScript",
-			"Asp",
-			"BASIC",
-			"C",
-			"C++",
-			"Clojure",
-			"COBOL",
-			"ColdFusion",
-			"Erlang",
-			"Fortran",
-			"Groovy",
-			"Haskell",
-			"Java",
-			"JavaScript",
-			"Lisp",
-			"Perl",
-			"PHP",
-			"Python",
-			"Ruby",
-			"Scala",
-			"Scheme"
-		];
-	$( "#location-entry" ).autocomplete({
-		source: returnedLocations
-	});
+//Use weather underground api to populate autocomplete options
+function autoCompleteFunction() {
+
+	var userResponse = $( '#location-entry').val();
+	var returnedLocations = [];
+
+	$.ajax({
+				url : 'http://autocomplete.wunderground.com/aq',
+				dataType: "jsonp", 
+				jsonp:    "cb",
+    			data:     {
+        			format: "json",
+        			query:  userResponse
+    			},
+    			success:  function (data) {
+        			var i;
+        			var returnedLocations = [];
+        			for (i in data.RESULTS) {
+        				returnedLocations.push(data.RESULTS[i].name);
+        			}
+        			$( "#location-entry" ).autocomplete({
+						source: returnedLocations,
+						delay: 500
+					});
+    			}
 });
 
-//Call wunderground autocomplete API with user's entry
-function submitLocation() {
-
-	var userResponse = document.getElementById('location-entry').value;
-	var url = 'http://autocomplete.wunderground.com/aq?query=' + userResponse
-
-/* Get autocomplete responses and */
-/*				$.ajax({
-				url : url,
-				dataType : "jsonp",
-				success : function(parsed_json) {
-				var location = parsed_json['location']['city'];
-				var temp_f = parsed_json['current_observation']['temp_f'];
-				alert("Current temperature in " + location + " is: " + temp_f);
-				}
-			});
-*/
-	React.render('<p> {url} </p>',document.getElementById('response'));
-}
+};
