@@ -39,8 +39,8 @@
 		</p>
 		
     <div class="ui-widget">
-				<input id="location-entry" name="location-entry" placeholder="Enter a city" type="text" oninput="autoCompleteFunction()"/>
-				<input type="button" onclick="submitLocation(); " value="Submit"/>
+				<input id="location-entry" name="location-entry" placeholder="Enter a city" type="text" onkeyup="if (event.keyCode == 13) document.getElementById('button').click()" oninput="autoCompleteFunction()"/>
+				<input type="button" id="button" onclick="submitLocation(); " value="Submit"/>
 		</div>
 		
     <div id="response">
