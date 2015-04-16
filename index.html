@@ -23,6 +23,60 @@
     <script src="http://fb.me/JSXTransformer-0.13.1.js"></script>
     <!--Include My Stylesheet-->
     <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+
+    <script type="text/jsx">
+      var Forecast = React.createClass ({
+        getDefaultProps: function(){
+            return{
+              dates: [],
+              weathers: [],
+              descriptions: []
+            }
+        },
+        propTypes:{
+            dates: React.PropTypes.array.isRequired,
+            weathers: React.PropTypes.array.isRequired,
+            descriptions: React.PropTypes.array.isRequired,
+        },
+        getInitialState:function(){
+          return{
+              day: 0,
+              selectedDay: this.props.dates[0],
+              selectedDaysWeather: this.props.weathers[0],
+              selectedDaysDescription: this.props.descriptions[0]
+          }
+        },
+        previousDay: function(e){
+          var previous = this.state.day -1;
+          this.setState({
+            day : previous,
+            selectedDay : this.props.dates[previous],
+            selectedDaysWeather : this.props.weathers[previous],
+            selectedDaysDescription : this.props.descriptions[previous]
+          });
+        },
+        nextDay: function(e){
+          var next = this.state.day +1;
+          this.setState({
+            day : next,
+            selectedDay : this.props.dates[next],
+            selectedDaysWeather : this.props.weathers[next],
+            selectedDaysDescription : this.props.descriptions[next]
+          });
+        },
+        render:function(){
+          return (
+            <div>
+              <input type = "button" value = "previous" onClick={this.previousDay}/>
+              <input type = "button" value = "next" onClick={this.nextDay}/>
+              <h2> {this.state.selectedDay} </h2>
+              <p> {this.state.selectedDaysDescription} </p>
+            </div>
+            );
+        }
+      });
+
+    </script>
     <!--Include My Scripts-->
     <script src="js/script.js"></script>
 

@@ -49,6 +49,8 @@ function getWeather(q) {
                         $('<h2>'+ date[i] + '</h2>').appendTo('#response');
                         $('<p>' + description[i] + '</p>').appendTo('#response');
                     }
+                    var forecast = React.createElement(Forecast, {dates: date, weathers: weather, descriptions: description});
+                    React.render(forecast, document.getElementById("response"));
                 }
     });
 };
