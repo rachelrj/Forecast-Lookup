@@ -16,8 +16,7 @@ function autoCompleteFunction() {
         				returnedLocations.push(data.RESULTS[i].name);
         			}
         			$( "#location-entry" ).autocomplete({
-						source: returnedLocations,
-						delay: 500
+						source: returnedLocations
 					});
     			}
     });
