@@ -52,8 +52,8 @@ nextDay: function(e){
 render:function(){
   return (
     <div>
-      <input className = {this.state.displayPrevious ? '' : 'hiddenButton'} type = "button" value = "previous" id= "previous" onClick={this.previousDay}/>
-      <input className = {this.state.displayNext ? '' : 'hiddenButton'} type = "button" value = "next" id = "next" display = {this.displayNext} onClick={this.nextDay}/>
+        <input className = {this.state.displayPrevious ? '' : 'hiddenButton'} type = "button" value = "previous" id= "previous" onClick={this.previousDay}/>
+        <input className = {this.state.displayNext ? '' : 'hiddenButton'} type = "button" value = "next" id = "next" display = {this.displayNext} onClick={this.nextDay}/>
       <h2> {this.state.selectedDay} </h2>
       <p> {this.state.selectedDaysDescription} </p>
     </div>

@@ -1,12 +1,71 @@
 /*CSS Sheet for Weather App*/
+html{
+	padding: 25px;
+	padding-left: 30%;
+	padding-right: 30%;
+}
+header {
+	margin-bottom: 75px;
+	height: 5em;
+	width: 100%;
+	top: 0;
+}
+h1, h2, p, div, #previous, #next, #location-entry, #button, #powered-by{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
 h1{
-	font-family: Verdana,Arial,sans-serif;
-  	font-size: 1.3em;
+  	font-size: 2em;
+}
+h2{
+	font-size: 1.7em;
 }
 p{
-  	font-family: Verdana,Arial,sans-serif;
-  	font-size: 1em;
+  	font-size: 1.3em;
+}
+#location-entry{
+	font-size: 1.3em;
+}
+#button{
+	font-size: 1.3em;
+	color: white;
+	background-color: blue;
+	text-decoration: none;
+	padding: 5px;
+	border: none;
+}
+#previous, #next{
+	font-family: Verdana,Arial,sans-serif;
+	font-size: 1em;
+	color: white;
+	background-color: blue;
+	margin-top: 50px;
+	text-decoration: none;
+	padding: 5px;
+	width: 125px;
+	border: none;
+	font-weight: bold;
+}
+#previous{
+	margin-right: 33%;
+}
+#next{
+	margin-left: 33%;
+}
+#button:hover, #button:active, #next:hover, #next:active, #previous:hover, #next:active{
+	background-color:darkblue; 
 }
 .hiddenButton{
 	visibility: hidden;
+}
+.credit{
+	font-size: .75em;
+}
+#wunderground{
+	float: right;
+	display: inline;
+}
+#rachel{
+	padding-top: 2px;
+	float: left;
+	display: inline;
 }
