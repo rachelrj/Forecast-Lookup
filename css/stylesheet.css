@@ -1,8 +1,38 @@
 /*CSS Sheet for Weather App*/
 html{
-	padding: 25px;
+	padding-top: 25px;
 	padding-left: 30%;
 	padding-right: 30%;
+}
+@media screen and (max-width: 1325px) {
+	html{
+		padding-left: 25%;
+		padding-right: 25%;
+	}
+}
+@media screen and (max-width: 1125px) {
+	html{
+		padding-left: 20%;
+		padding-right: 20%;
+	}
+}
+@media screen and (max-width: 925px) {
+	html{
+		padding-left: 15%;
+		padding-right: 15%;
+	}
+}
+@media screen and (max-width: 725px) {
+	html{
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+}
+@media screen and (max-width: 525px) {
+	html{
+		padding-left: 5%;
+		padding-right: 5%;
+	}
 }
 header {
 	margin-bottom: 75px;
@@ -40,16 +70,72 @@ p{
 	background-color: blue;
 	margin-top: 50px;
 	text-decoration: none;
-	padding: 5px;
-	width: 125px;
+	padding: 3%;
+	width: 17%;
+	height: 50px;
 	border: none;
 	font-weight: bold;
 }
 #previous{
-	margin-right: 33%;
+	margin-right: 28%;
 }
 #next{
-	margin-left: 33%;
+	margin-left: 28%;
+}
+@media screen and (max-width: 1325px) {
+	#previous, #next{
+		width: 19%;
+	}
+	#previous{
+		margin-right: 27%;
+	}
+	#next{
+		margin-left: 27%;
+	}
+}
+@media screen and (max-width: 1125px) {
+	#previous, #next{
+		width: 21%;
+	}
+	#previous{
+		margin-right: 26%;
+	}
+	#next{
+		margin-left: 26%;
+	}
+}
+@media screen and (max-width: 925px) {
+	#previous, #next{
+		width: 23%;
+	}
+	#previous{
+		margin-right: 25%;
+	}
+	#next{
+		margin-left: 25%;
+	}
+}
+@media screen and (max-width: 725px) {
+	#previous, #next{
+		width: 25%;
+	}
+	#previous{
+		margin-right: 24%;
+	}
+	#next{
+		margin-left: 24%;
+	}
+}
+@media screen and (max-width: 525px) {
+	#previous, #next{
+		width: 27%;
+	}
+	#previous{
+		margin-right: 23%;
+	}
+	#next{
+		margin-left: 23%;
+	}
 }
 #button:hover, #button:active, #next:hover, #next:active, #previous:hover, #next:active{
 	background-color:darkblue; 
