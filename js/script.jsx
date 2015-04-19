@@ -22,10 +22,27 @@ nextDay: function(e){
     day : this.state.day + 2
   });
 },
+currentDate: function(){
+  var today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth() + 1;
+  var yyyy = today.getFullYear();
+  if(this.state.day > 1)
+    dd = dd + 1;
+  if(this.state.day > 3)
+    dd = dd + 1;
+  if(this.state.day > 5)
+    dd = dd + 1;
+  today = mm+'/'+dd+'/'+yyyy;
+  return today;
+},
 render:function(){
   return (
     <div>
       <input className = {(this.state.day > 0) ? '' : 'hiddenButton'} type = "button" value = "previous" id= "previous" onClick={this.previousDay}/>
+      <p id = 'currentDate'>
+          {this.currentDate()}
+      </p>
       <input className = {(this.state.day < 6) ? '' : 'hiddenButton'} type = "button" value = "next" id = "next" onClick={this.nextDay}/>
       <div id = 'day'>
         <h2> {this.props.weather[this.state.day].date} </h2>
