@@ -47,10 +47,13 @@ h1{
   	font-size: 2em;
 }
 h2{
+	padding-top: 20px;
 	font-size: 1.7em;
+	clear: both;
 }
 p{
   	font-size: 1.3em;
+  	clear: both;
 }
 #location-entry{
 	font-size: 1.3em;
@@ -70,72 +73,18 @@ p{
 	background-color: blue;
 	margin-top: 50px;
 	text-decoration: none;
-	padding: 3%;
-	width: 17%;
-	height: 50px;
+	width: 95px;
+	height: 40px;
 	border: none;
 	font-weight: bold;
 }
 #previous{
-	margin-right: 28%;
+	float: left;
+	display: inline-block;
 }
 #next{
-	margin-left: 28%;
-}
-@media screen and (max-width: 1325px) {
-	#previous, #next{
-		width: 19%;
-	}
-	#previous{
-		margin-right: 27%;
-	}
-	#next{
-		margin-left: 27%;
-	}
-}
-@media screen and (max-width: 1125px) {
-	#previous, #next{
-		width: 21%;
-	}
-	#previous{
-		margin-right: 26%;
-	}
-	#next{
-		margin-left: 26%;
-	}
-}
-@media screen and (max-width: 925px) {
-	#previous, #next{
-		width: 23%;
-	}
-	#previous{
-		margin-right: 25%;
-	}
-	#next{
-		margin-left: 25%;
-	}
-}
-@media screen and (max-width: 725px) {
-	#previous, #next{
-		width: 25%;
-	}
-	#previous{
-		margin-right: 24%;
-	}
-	#next{
-		margin-left: 24%;
-	}
-}
-@media screen and (max-width: 525px) {
-	#previous, #next{
-		width: 27%;
-	}
-	#previous{
-		margin-right: 23%;
-	}
-	#next{
-		margin-left: 23%;
-	}
+	float: right;
+	display: inline-block;
 }
 #button:hover, #button:active, #next:hover, #next:active, #previous:hover, #next:active{
 	background-color:darkblue; 
