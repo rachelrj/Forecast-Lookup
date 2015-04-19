@@ -89,9 +89,23 @@ p{
 #currentDate{
 	display: inline-block;
 	margin-top: 50px;
+	margin-left: 25%;
 	color: #303030;
-	margin-left: 10%;
-	margin-right: 10%;
+}
+@media screen and (max-width: 750px) {
+	#currentDate{
+		margin-left: 20%;
+	}
+}
+@media screen and (max-width: 600px) {
+	#currentDate{
+		margin-left: 15%;
+	}
+}
+@media screen and (max-width: 450px) {
+	#currentDate{
+		margin-left: 10%;
+	}
 }
 #button:hover, #button:active, #next:hover, #next:active, #previous:hover, #next:active{
 	background-color:darkblue; 
