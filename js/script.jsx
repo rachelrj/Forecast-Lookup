@@ -1,24 +1,20 @@
 var Forecast = React.createClass ({
 getDefaultProps: function(){
     return{
-      dates: [],
-      weathers: [],
-      descriptions: []
+      weather: []
     }
 },
 propTypes:{
-    dates: React.PropTypes.array.isRequired,
-    weathers: React.PropTypes.array.isRequired,
-    descriptions: React.PropTypes.array.isRequired,
+    weather: React.PropTypes.array.isRequired
 },
 getInitialState:function(){
   return{
       displayPrevious : false,
       displayNext : true,
       day: 0,
-      selectedDay: this.props.dates[0],
-      selectedDaysWeather: this.props.weathers[0],
-      selectedDaysDescription: this.props.descriptions[0]
+      selectedDay: this.props.weather[0].date,
+      selectedDaysShortDescription: this.props.weather[0].shortDescription,
+      selectedDaysLongDescription: this.props.weather[0].longDescription
   }
 },
 previousDay: function(e){
@@ -30,9 +26,9 @@ previousDay: function(e){
     displayNext : true,
     displayPrevious : display,
     day : previous,
-    selectedDay : this.props.dates[previous],
-    selectedDaysWeather : this.props.weathers[previous],
-    selectedDaysDescription : this.props.descriptions[previous]
+    selectedDay : this.props.weather[previous].date,
+    selectedDaysShortDescription : this.props.weather[previous].shortDescription,
+    selectedDaysLongDescription : this.props.weather[previous].longDescription
   });
 },
 nextDay: function(e){
@@ -44,9 +40,9 @@ nextDay: function(e){
     displayPrevious : true,
     displayNext : display,
     day : next,
-    selectedDay : this.props.dates[next],
-    selectedDaysWeather : this.props.weathers[next],
-    selectedDaysDescription : this.props.descriptions[next]
+    selectedDay : this.props.weather[next].date,
+    selectedDaysShortDescription : this.props.weather[next].shortDescription,
+    selectedDaysLongDescription : this.props.weather[next].longDescription
   });
 },
 render:function(){
@@ -55,7 +51,7 @@ render:function(){
         <input className = {this.state.displayPrevious ? '' : 'hiddenButton'} type = "button" value = "previous" id= "previous" onClick={this.previousDay}/>
         <input className = {this.state.displayNext ? '' : 'hiddenButton'} type = "button" value = "next" id = "next" display = {this.displayNext} onClick={this.nextDay}/>
       <h2> {this.state.selectedDay} </h2>
-      <p> {this.state.selectedDaysDescription} </p>
+      <p> {this.state.selectedDaysLongDescription} </p>
     </div>
     );
 }

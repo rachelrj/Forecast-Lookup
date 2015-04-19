@@ -33,22 +33,14 @@ function getWeather(q) {
                     format: "json",
                 },
                 success:  function (data) {
-                    //store weather                    
-                    var date = [];
-                    var weather = [];
-                    var description = [];
-                    for (i in data.forecast.txt_forecast.forecastday) {
-                        date.push(data.forecast.txt_forecast.forecastday[i].title);
-                        weather.push(data.forecast.txt_forecast.forecastday[i].icon);
-                        description.push(data.forecast.txt_forecast.forecastday[i].fcttext);
-                    }
-                    //print weather to page
-                    for(i = 0; i < 8; i++)
-                    {
-                        $('<h2>'+ date[i] + '</h2>').appendTo('#response');
-                        $('<p>' + description[i] + '</p>').appendTo('#response');
-                    }
-                    var forecast = React.createElement(Forecast, {dates: date, weathers: weather, descriptions: description});
+                    //store weather
+
+                   var weather = [];
+                   var apiData = data.forecast.txt_forecast.forecastday;
+                    for (i in apiData){
+                        weather.push({date: apiData[i].title, shortDescription: apiData[i].icon, longDescription: apiData[i].fcttext});
+                    }                
+                    var forecast = React.createElement(Forecast, {weather: weather});
                     React.render(forecast, document.getElementById("response"));
                 }
     });
