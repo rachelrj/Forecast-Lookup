@@ -140,10 +140,12 @@ p{
 #day{
 	display: inline-block;
 	float: left;
-	width: 50%;
+	width: 47%;
+	padding-right: 3%;
 }
 #night{
 	display: inline-block;
 	float: right;
-	width: 50%;
+	width: 47%;
+	padding-right: 3%;
 }
