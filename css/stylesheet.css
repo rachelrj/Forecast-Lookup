@@ -110,6 +110,15 @@ p{
 		margin-left: 10%;
 	}
 }
+@media screen and (max-width: 400px) {
+	#currentDate{
+		margin-left: 5%;
+		font-size: .8em;
+	}
+	#next{
+		width: 75px;
+	}
+}
 #button:hover, #button:active, #next:hover, #next:active, #previous:hover, #next:active{
 	background-color:darkblue; 
 }
@@ -127,4 +136,14 @@ p{
 	padding-top: 2px;
 	float: left;
 	display: inline;
+}
+#day{
+	display: inline-block;
+	float: left;
+	width: 50%;
+}
+#night{
+	display: inline-block;
+	float: right;
+	width: 50%;
 }
