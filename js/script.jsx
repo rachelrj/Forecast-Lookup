@@ -39,6 +39,12 @@ getCurrentDate: function(){
 getCurrentCity: function(){
   return $( '#location-entry').val();
 },
+getDayIcon: function(){
+  return iconURL = 'http://icons.wxug.com/i/c/j/' + this.props.weather[this.state.day].shortDescription + '.gif';
+},
+getNightIcon: function(){
+  return iconURL = 'http://icons.wxug.com/i/c/j/' + this.props.weather[this.state.day + 1].shortDescription + '.gif';
+},
 render:function(){
   return (
     <div>
@@ -50,10 +56,12 @@ render:function(){
       <h2> {this.getCurrentCity()} </h2>
       <div id = 'day'>
         <h3> {this.props.weather[this.state.day].date} </h3>
+        <img src = {this.getDayIcon()} />
         <p> {this.props.weather[this.state.day].longDescription} </p>
       </div>
       <div id = 'night'>
         <h3> {this.props.weather[this.state.day+1].date} </h3>
+        <img src = {this.getNightIcon()} />
         <p> {this.props.weather[this.state.day+1].longDescription} </p>
       </div>
     </div>
