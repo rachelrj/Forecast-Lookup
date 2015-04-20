@@ -22,7 +22,7 @@ nextDay: function(e){
     day : this.state.day + 2
   });
 },
-currentDate: function(){
+getCurrentDate: function(){
   var today = new Date();
   var dd = today.getDate();
   var mm = today.getMonth() + 1;
@@ -36,20 +36,24 @@ currentDate: function(){
   today = mm+'/'+dd+'/'+yyyy;
   return today;
 },
+getCurrentCity: function(){
+  return $( '#location-entry').val();
+},
 render:function(){
   return (
     <div>
       <input className = {(this.state.day > 0) ? '' : 'hiddenButton'} type = "button" value = "previous" id= "previous" onClick={this.previousDay}/>
       <p id = 'currentDate'>
-          {this.currentDate()}
+          {this.getCurrentDate()}
       </p>
       <input className = {(this.state.day < 6) ? '' : 'hiddenButton'} type = "button" value = "next" id = "next" onClick={this.nextDay}/>
+      <h2> {this.getCurrentCity()} </h2>
       <div id = 'day'>
-        <h2> {this.props.weather[this.state.day].date} </h2>
+        <h3> {this.props.weather[this.state.day].date} </h3>
         <p> {this.props.weather[this.state.day].longDescription} </p>
       </div>
       <div id = 'night'>
-        <h2> {this.props.weather[this.state.day+1].date} </h2>
+        <h3> {this.props.weather[this.state.day+1].date} </h3>
         <p> {this.props.weather[this.state.day+1].longDescription} </p>
       </div>
     </div>

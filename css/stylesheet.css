@@ -40,16 +40,19 @@ header {
 	width: 100%;
 	top: 0;
 }
-h1, h2, p, div, #previous, #next, #location-entry, #button, #powered-by{
+h1, h2, h3, p, div, #previous, #next, #location-entry, #button, #powered-by{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 h1{
-  	font-size: 2em;
+  	font-size: 2.2em;
 }
 h2{
 	padding-top: 20px;
-	font-size: 1.7em;
+	font-size: 1.9em;
 	clear: both;
+}
+h3{
+	font-size: 1.7em;
 }
 p{
   	font-size: 1.3em;
